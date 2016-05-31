@@ -1,0 +1,1 @@
+This is my personal repository of exercises and work completed during my time at Codeup.

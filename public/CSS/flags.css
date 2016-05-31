@@ -1,0 +1,164 @@
+.japan-circle {
+	background-color: red;
+	border-radius: 50%;
+	width: 275px;
+	height: 275px;
+	margin: 100px;
+	margin-top: 65px;
+	margin-left: 160px;
+}
+
+.japan-rectangle {
+	width: 600px;
+	height: 400px;
+	background-color: white;
+	border: 2px solid black;
+}
+
+.france-white {
+ 	width: 600px;
+ 	height: 400px;
+ 	background-color: white;
+ 	border: 2px solid black;
+ 	position: relative;
+}
+.france-blue {
+	width: 33%;
+	height: 100%;
+	background-color: navy;
+	position: relative;
+	float: left;
+
+}
+.france-red {
+	width: 33%;
+	height: 100%;
+	background-color: red;
+	position: relative;
+	float: right;
+}
+.germany-red {
+	width: 500px;
+ 	height: 300px;
+ 	background-color: red;
+ 	border: 2px solid black;
+ 	position: relative;
+}
+.germany-black {
+	width: 100%;
+ 	height: 33%;
+ 	background-color: black;
+ 	position: relative;
+ 	background: -180deg;
+}
+.germany-yellow {
+	width: 100%;
+ 	height: 33%;
+ 	background-color: gold;
+ 	position: relative;
+ 	top: 34%;
+
+}
+.palestine-white {
+	width: 500px;
+ 	height: 300px;
+ 	background-color: white;
+ 	border: 2px solid black;
+ 	position: relative;
+}
+.palestine-black {
+	width: 100%;
+ 	height: 33%;
+ 	background-color: black;
+ 	position: relative;
+ 	background: -180deg;
+}
+.palestine-green {
+	width: 100%;
+ 	height: 33%;
+ 	background-color: green;
+ 	position: relative;
+ 	top: 34%;
+
+}
+.palestine-red {
+	width: 0;
+	height: 0;
+	border-top: 150px solid transparent;
+	border-left: 160px solid red;
+	border-bottom: 150px solid transparent;
+	position: relative;
+	bottom: 200px;
+}
+.djibouti-blue {
+	width: 500px;
+ 	height: 300px;
+ 	background-color: #B0E2FF;
+ 	border: 2px solid black;
+ 	position: relative;
+}
+.dijbouti-green {
+	width: 100%;
+ 	height: 50%;
+ 	background-color: #2C972C;
+ 	position: relative;
+ 	top: 50%;
+}
+.dijbouti-white {
+	width: 0;
+	height: 0;
+	border-top: 150px solid transparent;
+	border-left: 250px solid #FFF;
+	border-bottom: 150px solid transparent;
+	position: relative;
+	bottom: 150px;
+}
+div.dijbouti-red-star>.dijbouti-white {
+   margin: 50px 0;
+   position: relative;
+   display: block;
+   color: red;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid red;
+   border-left:   100px solid transparent;
+   -moz-transform:    rotate(35deg);
+   -webkit-transform: rotate(35deg);
+   -ms-transform:     rotate(35deg);
+   -o-transform:      rotate(35deg);
+}
+div.dijbouti-red-star::before {
+   border-bottom: 80px solid red;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   position: absolute;
+   height: 0;
+   width: 0;
+   top: -45px;
+   left: -65px;
+   display: block;
+   content: '';
+   -webkit-transform: rotate(-35deg);
+   -moz-transform:    rotate(-35deg);
+   -ms-transform:     rotate(-35deg);
+   -o-transform:      rotate(-35deg);
+
+}
+div.dijbouti-red-star::after {
+   position: absolute;
+   display: block;
+   color: red;
+   top: 3px;
+   left: -105px;
+   width: 0px;
+   height: 0px;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid red;
+   border-left: 100px solid transparent;
+   -webkit-transform: rotate(-70deg);
+   -moz-transform:    rotate(-70deg);
+   -ms-transform:     rotate(-70deg);
+   -o-transform:      rotate(-70deg);
+   content: '';
+}
