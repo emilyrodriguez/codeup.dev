@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Boolean</title>
+	</head>
+	<body>
+		<script>
+
+			 var isPremiumUser = true;
+			 var productHasOffer = false;
+			 var applyDiscount = isPremiumUser && productHasOffer; 
+			 console.log(applyDiscount);
+			 
+			 
+			 var classSpace = true;
+			 var scheduleConflict = false;
+			 var classEnroll = classSpace && !scheduleConflict;
+			 console.log(classEnroll);
+// 
+			 var minItemsPurchased = true;
+			 var offerNotExpired = true;
+			 var premiumMember = false;
+			 var productOffer = offerNotExpired && (minItemsPurchased || premiumMember)
+			 console.log(productOffer);
+// 
+			 var sameActor = false;
+			 var sameCategory = false;
+			 var movieRating = true;
+			 var movieRecommendation = sameActor || sameCategory || movieRating;
+			 console.log(movieRecommendation);
+
+
+				var littleMermaid = 3;
+				var brotherBear = 5;
+				var hercules = 1;
+				var pricePerDay = 3;
+				var totalCost = (littleMermaid + brotherBear + hercules) * pricePerDay;
+					console.log(totalCost);
+
+
+				var google = 400;
+				var facebook = 350;
+				var amazon = 380;
+				var total = (google * 6) + (facebook * 10) + (amazon * 4);
+					console.log(total);
+					
+		</script>
+	</body>
+<html>
