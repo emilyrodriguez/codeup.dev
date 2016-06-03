@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>For Loop</title>
+	</head>
+	<body>
+		<script>
+	'use strict'
+		
+
+
+		var message;
+		for (var i = 1; i <= 10; i++)
+		{
+			message = '';
+			for (var j = 0; j < i; j++) {
+				if ( i == 10) {
+					message = message + 0;
+				} else {
+					message = message + i;
+				}
+			} 
+			console.log(message);
+		}
+
+		var randomNumber = Math.ceil(Math.random()*10);
+		var solution;
+
+			for (var i = 1; i <= 10; i++) {
+
+			    solution  = randomNumber * i;
+			    console.log(randomNumber+'x'+i+'='+solution);
+			};	
+
+
+		 for (var i = 1; i <= 10; i++) {
+    		var randomNumber = Math.ceil(Math.random()*(200-20));  
+    		var numState = " is odd"; 
+    		if (randomNumber % 2 == 0) {
+    		    numState = " is even";
+    		};
+    		console.log(randomNumber + numState);
+			};
+
+
+		for (var number = 100; number >= 5; number = number - 5) {
+			console.log(number);
+		}
+
+		for (var i = 0; i < 4; i++)
+		{
+		</script>
+	</body>
+</html>
