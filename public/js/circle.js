@@ -16,11 +16,11 @@
         logInfo: function (doRounding) {
             // TODO: complete this method.
             var area = this.getArea();
-            if (doRounding) {
-                console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(area));
-            } else {
-                console.log("Area of a circle with radius: " + this.radius + ", is: " + area);
-            }
+                if (doRounding) {
+                    console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(area));
+                } else {
+                    console.log("Area of a circle with radius: " + this.radius + ", is: " + area);
+                }
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
            
@@ -36,6 +36,7 @@
     circle.logInfo(true);
 
     console.log("=======================================================");
+
 
     circle.radius= 5;
          // log info about the circle
