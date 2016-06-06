@@ -20,3 +20,4 @@
     console.log(planetsAligned);
 
 })();
+
