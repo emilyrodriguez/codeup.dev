@@ -9,34 +9,33 @@
 		
 
 
-		 var message;
 		 for (var i = 1; i <= 10; i++)
 		 {
-			message = '';
-			for (var j = 0; j < i; j++) {
-				 if ( i == 10) {
-					 message = message + 0;
-				 } else {
-					 message = message + i;
-				 }
-			 } 
-			 console.log(message);
+		 	var message = '';
+		 	for (var j = 0; j < i; j++) {
+		  		if ( i == 10) {
+		  			message += 0;
+		  		} else {
+		  			message += i;
+		  	}
+		 		} 
+		 	console.log(message);
+		 	}
+
+
+		 function repeatNumber(number, times) {
+		 	var log = '';
+		 	for (var j = 1; j <= times; j++) {
+		 		log += times % 10;
+		 		} 
+		 		return log;
 		 }
+			 for (var i = 1; i <= 10; i++) {
+			 	var log = repeatNumber(i, i);
+			 	console.log(log);
+			 }
+	
 
-
-
-		// function message(number){
-			// for (var i = 1; i <= 10; i++) {
-					// message = '';
-			// for (var j = 0; j < i; j++) {
-				// if (i == 10) {
-					// message = message + 0;
-				// } else {
-					// message = message + i;
-				// }}
-										// }
-			// 
-				// console.log(message());
 
 
 		var randomNumber = Math.ceil(Math.random()*10);
