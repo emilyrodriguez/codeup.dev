@@ -1,32 +1,42 @@
 	var luckyNumber = Math.floor(Math.random()* 6);
-	var luckyNumber0 = 0;
-	var luckyNumber1 = .10;
-	var luckyNumber2 = .25;
-	var luckyNumber3 = .35;
-	var luckyNumber4 = .5;
-	var luckyNumber5 = 1;
-	var totalPurchase = 60;
-	
+	var discounts = [0, .1, .25, .35, .5, 1]
+	var discount = discounts[luckynumber];
+	var discountedCost = cost - (cost * discount);
+	console.log('You got a ' + luckyNumber + " and will pay " + discountedCost "!");
 		console.log(luckyNumber);
-		switch (luckyNumber) {
-			case 1:
-				console.log("You get 10% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber1)));
-				break;
-			case 2:
-				console.log("You get 25% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber2)));
-					break;
-			case 3:
-				console.log("You get 35% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber3)));
-				break;
-		
-			case 4:
-				console.log("You get 50% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber4)));
-				break;
-			case 5:
-				console.log("You get 100% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber5)));
-				break;
-			default:
-				console.log("You did not recieve a discount.");
+
+	// var luckyNumber0 = 0;
+	// var luckyNumber1 = .10;
+	// var luckyNumber2 = .25;
+	// var luckyNumber3 = .35;
+	// var luckyNumber4 = .5;
+	// var luckyNumber5 = 1;
+	// var totalPurchase = 60;
+
+
+	
+		// switch (luckyNumber) {
+			// case luckynumber: 
+				// 
+				// break
+			// case 1:
+				// console.log("You get 10% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber1)));
+				// break;
+			// case 2:
+				// console.log("You get 25% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber2)));
+					// break;
+			// case 3:
+				// console.log("You get 35% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber3)));
+				// break;
+		// 
+			// case 4:
+				// console.log("You get 50% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber4)));
+				// break;
+			// case 5:
+				// console.log("You get 100% off. Total: $" + (totalPurchase - (totalPurchase * luckyNumber5)));
+				// break;
+			// default:
+				// console.log("You did not recieve a discount.");
 		}
 
 	var monthNumber = Math.floor(Math.random()* 11) + 1;
