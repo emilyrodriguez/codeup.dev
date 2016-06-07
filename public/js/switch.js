@@ -1,9 +1,9 @@
 	var luckyNumber = Math.floor(Math.random()* 6);
 	var discounts = [0, .1, .25, .35, .5, 1]
-	var discount = discounts[luckynumber];
+	var discount = discounts[luckyNumber];
+	var cost = 60;
 	var discountedCost = cost - (cost * discount);
-	console.log('You got a ' + luckyNumber + " and will pay " + discountedCost "!");
-		console.log(luckyNumber);
+	console.log('You got a ' + luckyNumber + " and will pay $" + discountedCost +"!");
 
 	// var luckyNumber0 = 0;
 	// var luckyNumber1 = .10;
@@ -37,13 +37,13 @@
 				// break;
 			// default:
 				// console.log("You did not recieve a discount.");
-		}
+		// }
 
 	var monthNumber = Math.floor(Math.random()* 11) + 1;
 	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 	var month = months[monthNumber];
-	console.log("The " + (monthNumber + 1)  + " month is " + month);
+	console.log("Month " + (monthNumber + 1)  + " is " + month);
 
 		// for (months){
 // 
