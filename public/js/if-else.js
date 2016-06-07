@@ -10,6 +10,24 @@
 		 } else {
 			console.log("You need to practice more.");
 		 }
+
+
+		 var grades [];
+		 var name = prompt("Please enter your name.");
+
+
+		 var average = grades / numberOfGrades;
+		 	if (average > awesomeGrade) {
+		 		alert("You're awesome " + name + "!");
+		 	} else {
+		 		alert("You should practice more " + name + ".");
+		 	}
+
+
+
+
+
+
 		 
 	  var offerMin = 200;
 	  var discount = .35;
