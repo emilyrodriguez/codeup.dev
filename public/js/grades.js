@@ -7,43 +7,49 @@
 // * function.
 // * Use at least one array (it must be part of the object)
 // * Make it work for a variable number of grades.
-
-		(function() {
+	(function() {
+	
+		var student = {
+			name: '',
+			subjects: [],
+			addToSubjectsArray: function (subject) {
+				this.subjects.push(subject);
+				return this.subjects;
+			},
+			grades: [],
+			addToGradesArray: function (grade) {
+				this.grades.push(grade);
+				return this.grades;
+			}, 
+			averagedGrades: function () {
+				var sumGrades = 0;
+				for (var index = 0; index < this.grades.length; index++){
+					sumGrades = sumGrades + Number(this.grades[index]);
+					}
+					var average = sumGrades / this.grades.length;
+					return average;
+			}
+		};
+	
+		student.name = prompt('Please enter your name.');
 		
-		var sumGrades = 0;
-		
-			var student = {
-				name: '',
-		
-				subjects: [],
-				addToSubjectsArray: function (subject) {
-					this.subjects.push(subject);
-					return this.subjects;
-				},
-		
-				grades: [],
-				addToGradesArray: function (grade) {
-					this.grades.push(grade);
-					return this.grades;
-				}, 
-		
-				averagedGrades: function (grade, index) {
-					sumGrades = sumGrades + grades[index];
-					var average = grades / numberOfGrades;
-					alert(name + ", your average is " + average);
-				}
-			};
-		
-			student.name = prompt('Please enter your name.');
-			
-			do {
+		do {
 			var subjectMessage = prompt('Please enter the subject:');
 			student.addToSubjectsArray(subjectMessage);
 			var gradeMessage = prompt('Please enter a grade:');
 			student.addToGradesArray(gradeMessage);
 			var moreGrades = confirm('Do you have more grades?');
-			} while (moreGrades);
-		
-			
-		
-		})();
+		} while (moreGrades);
+	
+		var awesomeGrade = 80;
+	
+		var averageGrade = Math.round(student.averagedGrades());
+	
+		if (averageGrade > awesomeGrade) {
+			alert(student.name + ", your overall average is " + averageGrade + " which is awesome!");
+		} else {
+			alert(student.name + ", your overall average is " + averageGrade + " which means you need to study.");
+		}
+	
+	
+	})();
