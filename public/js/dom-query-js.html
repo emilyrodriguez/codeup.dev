@@ -25,40 +25,65 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+    <button id="btn1">JavaScript is...!</button>
+    <button id="btn2">Hello Blue</button>
+    <button id="btn3">Alternate Colors</button>
+    <button id="btn4">Item 1</button>
+    <button id="btn5">Mission Status</button>
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-
-        var mainHeader = document.getElementById('main-header');
-        mainHeader.innerHTML = "JavaScript is Cool!";
-
+            var cool = function (event) {
+                var mainHeader = document.getElementById('main-header');
+                mainHeader.innerHTML = "JavaScript is Cool!";
+            }
+            document.getElementById('btn1').addEventListener('click', cool, false);
+            
         
         // TODO: Uncomment the next line and get the sub header element by id
         // TODO: Set the text color of subHeader to blue
 
-        var subHeader = document.getElementById("sub-header");
-        subHeader.style.color = 'blue';
+            var blueHead = function (event) {
+                var subHeader = document.getElementById("sub-header");
+                subHeader.style.color = 'blue';
+            }
+            document.getElementById('btn2').addEventListener('click', blueHead, true);
+        
 
         // TODO: Uncomment the next line and get all list items
         // TODO: Set text color on every other list item to grey
-        var listItems = document.getElementsByTagName("li");
+
+            var greyList = function (event) {
+                var listItems = document.getElementsByTagName("li");
              for (var i = 0; i < listItems.length; i++)
                   if (i % 2 === 1) {
                       listItems[i].style.color = "grey";
                   }
+            }
+            document.getElementById('btn3').addEventListener('click', greyList, true);
+            
+            var blueLi = function (event) {
+                var listItems = document.getElementsByTagName('li')[0];
+                listItems.style.color = "blue";
+            }
+            document.getElementById('btn4').addEventListener('click', blueLi, true);
 
         // TODO: Set text color of li with dbid = 1 to blue
         
-        listItems = document.getElementsByTagName('li')[0];
-        listItems.style.color = "blue";
+        
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+            var mission = function (event) {
+                var subParagraph = document.getElementsByClassName("sub-paragraph")[0];
+                subParagraph.innerHTML = "Mission Accomplished";
+            }
+            document.getElementById('btn5').addEventListener('click', mission, true);
         
-        var subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
-        subParagraphs.innerHTML = "Mission Accomplished";
+
+
        
 
         
