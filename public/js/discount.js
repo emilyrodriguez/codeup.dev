@@ -63,9 +63,3 @@
 					var moreCustomers = confirm("Are there more customers?");
 				} while (moreCustomers);
 	})();
-
-
-
-
-
-
