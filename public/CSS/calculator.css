@@ -22,7 +22,6 @@ input.output-area{
 	border-radius: 5px;
 	box-shadow: 1px 1px 1px #888888;
 	background: transparent;
-
 }
 
 input.output-area-center {
@@ -30,9 +29,10 @@ input.output-area-center {
 	height: 35px;
 	margin-bottom: 20px;
 	border-radius: 5px;
-	box-shadow: 2px 2px 1px #888888;
+	box-shadow: 1px 1px 1px #888888;
 	background: transparent;
 }
+
 
 button.btn.btn-info.btn-m {
 	width: 70px;
@@ -42,13 +42,8 @@ button.btn.btn-info.btn-m {
 	text-align: center;
 	margin-left: 5px;
 	box-shadow: 2px 2px 1px #888888;
-
 }
-#operators {
+#signs, #clear-bttn, #binary-bttn, #hex-bttn, #dec-bttn  {
 	background-image: url("../img/gun_metal.png");
 	color: white;
-}
-#clear-bttn, #binary-bttn, #hex-bttn, #dec-bttn {
-	color: white;
-	background-image: url("../img/gun_metal.png")
 }
