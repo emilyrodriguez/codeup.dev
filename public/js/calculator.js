@@ -54,10 +54,11 @@
 			result = parseFloat(x) * parseFloat(z);
 		} else if (y == "%") {
 			result = (parseFloat(x) * .01);
+		} else if (y == "^") {
+			result = Math.pow(x,z);
+		} else if (y == "√") {
+			result = Math.sqrt(x);;	
 		} 
-
-
-
 
 		leftSide.value = result;
 		rightSide.value = "";
@@ -75,13 +76,3 @@
 		});
 	}
 		clearDisplay();
-		
-
-
-// 	function insertDecimal() {
-// 	    var display = document.getElementById('leftSide');
-// 	    	clearPrevious();
-// 	    if (display.value.indexOf('.') === -1) {
-// 	    	display.value += '.';
-// 	}
-
