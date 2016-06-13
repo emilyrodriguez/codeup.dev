@@ -1,5 +1,5 @@
 "use strict";
-(function() {})
+(function() {
 	var leftSide = document.getElementById("leftSide");
 	var operator = document.getElementById("operator");
 	var rightSide = document.getElementById("rightSide");
@@ -76,3 +76,4 @@
 		});
 	}
 		clearDisplay();
+}());
