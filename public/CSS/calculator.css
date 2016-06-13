@@ -8,11 +8,9 @@ h1 {
     padding: 10px;
     border: 1px solid black;
     margin: auto;
-    align-items: center;
     background-image: url("../img/squared_metal.png");
     border-radius: 5px;
     box-shadow: 1px 1px 1px #888888;
-
 }
 
 #leftSide, #rightSide {
@@ -37,17 +35,16 @@ h1 {
 	font-size: 24px;
 }
 
-
 button.btn.btn-info.btn-m {
-	width: 70px;
-	height: 25px;
+	width: 73px;
+	height: 28px;
 	margin: 5px;
 	font-size: 15px;
 	text-align: center;
 	margin-left: 5px;
 	box-shadow: 2px 2px 1px #888888;
 }
-button.btn.btn-info.btn-m.signs, #clear-bttn {
-	background-image: url("../img/gun_metal.png");
+button.btn.btn-info.btn-m.signs, #clear-bttn, #posNeg-bttn, #percent-bttn, #exponent-bttn {
+	background-color: #000;
 	color: white;
 }
