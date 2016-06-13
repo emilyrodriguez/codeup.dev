@@ -10,18 +10,17 @@
 	}
 	function sendNumberToTop() {
 		var leftInput = document.getElementById("leftSide");
-		leftInput.value += this.getAttribute("value");
-		}
-		if (operator =='') {
+		var operator = document.getElementById("operator");
+		
+		if (operator.value == '') {
 			leftInput.value += this.getAttribute("value");
-		} else {
-			operator.value = this.getAttribute("value");
+		} else {	
+			var rightInput = document.getElementById("rightSide");
+			rightInput.value += this.value;
 		}
-		
+		}
 		pressNumberButton();
-		
-
-// middle operation input
+	
 	var operationButtons = document.getElementsByClassName("signs");
 	function pressSignButton() {
 		for (var i = 0; i < operationButtons.length; i++) {
@@ -34,10 +33,6 @@
 		}
 		pressSignButton();
 		console.log(pressSignButton());
-
-// right side input
-
-
 
 
 
