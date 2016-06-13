@@ -15,43 +15,40 @@
 
 			<div class="keypad">
 				<div id="row-one">
-					<button type="button" class="btn btn-info btn-m" id="clear-bttn" value="C" onclick="clearDisplay()">C</button>
-					<!-- <button type="button" class="btn btn-info btn-m" id="binary-bttn">bin<	button> -->
-					<!-- <button type="button" class="btn btn-info btn-m" id="dec-bttn">dec<	button> -->
-					<!-- <button type="button" class="btn btn-info btn-m" id="hex-bttn">hex<	button> -->
+					<button type="button" class="btn btn-info btn-m digits" id="clear-bttn" value="C">C</button>
 				</div>
 
 				<div id="row-two">
-					<button type="button" class="btn btn-info btn-m" class="digits" value="7" onclick="numInput('7')">7</button>
-					<button type="button" class="btn btn-info btn-m" class="digits" value="8" onclick="numInput('8')">8</button>
-					<button type="button" class="btn btn-info btn-m" class="digits" value="9" onclick="numInput('9')">9</button>
-					<button type="button" class="btn btn-info btn-m" id="signs" value="/" onclick="setOperation('divide')">÷</button>
+					<button type="button" class="btn btn-info btn-m digits" value="7">7</button>
+					<button type="button" class="btn btn-info btn-m digits" value="8">8</button>
+					<button type="button" class="btn btn-info btn-m digits" value="9">9</button>
+					<button type="button" class="btn btn-info btn-m signs" value="/">÷</button>
 				</div>
 	
 				<div id="row-three">
-					<button type="button" class="btn btn-info btn-m" class="digits" value="4" onclick="numInput('4')">4</button>
-					<button type="button" class="btn btn-info btn-m" class="digits" value="5" onclick="numInput('5')">5</button>
-					<button type="button" class="btn btn-info btn-m" class="digits" value="6" onclick="numInput('6')">6</button>
-					<button type="button" class="btn btn-info btn-m" id="signs" value="*" onclick="setOperation('multiply')">*</button>
+					<button type="button" class="btn btn-info btn-m digits" value="4">4</button>
+					<button type="button" class="btn btn-info btn-m digits" value="5">5</button>
+					<button type="button" class="btn btn-info btn-m digits" value="6">6</button>
+					<button type="button" class="btn btn-info btn-m signs" value="*">*</button>
 				</div>
 	
 				<div id="row-four">
-					<button type="button" class="btn btn-info btn-m" class="digits" value="1" onclick="numInput('1')">1</button>
-					<button type="button" class="btn btn-info btn-m" class="digits" value="2" onclick="numInput('2')">2</button>
-					<button type="button" class="btn btn-info btn-m" class="digits" value="3" onclick="numInput('3')">3</button>
-					<button type="button" class="btn btn-info btn-m" id="signs" value="+" onclick="setOperation('add')">+</button>
+					<button type="button" class="btn btn-info btn-m digits" value="1">1</button>
+					<button type="button" class="btn btn-info btn-m digits" value="2">2</button>
+					<button type="button" class="btn btn-info btn-m digits" value="3">3</button>
+					<button type="button" class="btn btn-info btn-m signs" value="+">+</button>
 				</div>
 	
 				<div id="row-five">
-					<button type="button" class="btn btn-info btn-m" class="digits" value="0" onclick="numInput('0')">0</button>
-					<button type="button" class="btn btn-info btn-m" class="digits" value="." onclick="insertDecimal">.</button>
-					<button type="button" class="btn btn-info btn-m" id="signs" value="=" onclick="calculate()">=</button>
-					<button type="button" class="btn btn-info btn-m" id="signs" value="-" onclick="setOperation('subtract')">-</button>
+					<button type="button" class="btn btn-info btn-m digits" value="0">0</button>
+					<button type="button" class="btn btn-info btn-m digits" value=".">.</button>
+					<button type="button" class="btn btn-info btn-m signs" value="=">=</button>
+					<button type="button" class="btn btn-info btn-m signs" value="-">-</button>
 				</div>
 				</div>
 
 			</div>
 		</div>
-		<script src="/js/calculator.js"></script>
+		<script src="js/calculator.js"></script>
 	</body>
 </html>

@@ -1,116 +1,147 @@
 "use strict";
-(function() {
+// (function() {
+
 // left side input
-	function clearDisplay() {
-	    var display = document.getElementById('display');
-	    	display.value = '0';
-	    	storedNum = '0';
-	    	calcFinished = true;
-	    	operation = operations.none;
+	var numberButtons = document.getElementsByClassName("digits");
+	function pressNumberButton() {
+		for (var i = 0; i < numberButtons.length; i++) {
+			numberButtons[i].addEventListener('click', sendNumberToTop);
+		}
 	}
-	
-	function clearPrevious() {
-	    var display = document.getElementById('display');
-	    if (calcFinished) {
-	        display.value = '0';
-	        calcFinished = false;
-	    }
+	function sendNumberToTop() {
+		var leftInput = document.getElementById("leftSide");
+		leftInput.value += this.getAttribute("value");
+		}
+		if (operator =='') {
+			leftInput.value += this.getAttribute("value");
+		} else {
+			operator.value = this.getAttribute("value");
+		}
+		
+		pressNumberButton();
+		
+
+// middle operation input
+	var operationButtons = document.getElementsByClassName("signs");
+	function pressSignButton() {
+		for (var i = 0; i < operationButtons.length; i++) {
+			operationButtons[i].addEventListener('click', sendSignToTop);
+		}
 	}
-	
-	function numInput(digits) {
-	    var display = document.getElementById('leftSide');
-	    	clearPrevious();
-	    if (display.value === '0') display.value = '';
-	    	display.value += digit;
-	}
-	
-	function insertDecimal() {
-	    var display = document.getElementById('leftSide');
-	    	clearPrevious();
-	    if (display.value.indexOf('.') === -1) display.value += '.';
-	}
-	
-// math operations
+	function sendSignToTop() {
+		var operatorInput = document.getElementById("operator");
+		operatorInput.value = this.getAttribute("value");
+		}
+		pressSignButton();
+		console.log(pressSignButton());
 
-	function add() {
-		var display = document.getElementById('operator');
-		setOperation
-	}
-	function subtract() {
-		var display = document.getElementById('operator');
-	}
-
-	function multiply() {
-		var display = document.getElementById('operator');
-	}
-	function divide() {
-		var display = document.getElementById('operator');
-	}
-
-
-
-// right side output
-	function setOperation(command) {
-	    var display = document.getElementById('rightSide');
-	    	calculate();
-	    	storedNum = display.value;
-	    if (operations.hasOwnProperty(command))
-	        operation = operations[command];
-	}
-	
-	function calculate() {
-	    var display = document.getElementById('rightSide');
-	    	display.value = operation(+ storedNum, + display.value);
-	    	calcFinished = true;
-	    	operation = operations.none;
-	}
-	
-// events
-	if ('addEventListener')
-	    window.addEventListener('load', clearDisplay);
-	else
-	    window.attachEvent('onload', clearDisplay);
-	}());
-	
+// right side input
 
 
 
 
 
-// 	 var storeNumber = function(event) {
-// 		 var operators = document.getElementById("signs");
-// 		 if (operators !== "signs") {
-// 			 var numberInput = document.getElementById("leftSide");
-// 			 numberInput.value += this.getAttribute('data-value');
-// 		 } else {
-// 			 var numberInput = document.getElementById("signs");
-// 			 numberInput.value = this.getElementById('output-area-center');
-// 		 }
-			
-// 	 }
-	
-
-// //events
-
-
-// 	var numberInput = document.getElementsByClassName("digits");
-// 	    for(var i = 0; i < numberInput.length; i++) {
-// 	        numberInput[i].addEventListener('click', storeNumber);
+// 	function numInput(digits) {
+// 	    // var display = document.getElementsByClassName('digits');
+// 	    	clearPrevious();
+// 	    if  (display.value === '0') {
+// 	    	display.value = ''; 
+// 	    	display.value += digit;
 // 	    }
-// 	    console.log(numberInput);
+// 	}
 
-// 	var operatorInput = document.getElementById("signs");
-// 	    for(var i = 0; i < operatorInput.length; i++) {
-// 	        operatorInput[i].addEventListener('click', storeSecondInput);
+//  	 var numberInput = document.getElementsByClassName("digits");
+//  	     for(var i = 0; i < numberInput.length; i++) {
+//  	         numberInput[i].addEventListener('click', storeNumber);
+//  	    } 
+
+// 	function clearDisplay() {
+
+// 		var clearDisplay = document.getElementById('display');
+// 			clearDisplay.innerHTML = "0";
+// 			clearDisplay.value = '0';
+// 			storedNum = '';
+// 	    	calcFinished = true;
+// 	    	// operation = operations.none;
+// 	}
+// 		if ('addEventListener'){
+// 		    window.addEventListener('load', clearDisplay);
+// 		}
+// 		else {
+// 		    window.attachEvent('onload', clearDisplay);
+// 		}
+	
+// 	// define the term within the funciton or the global sense
+// 	// do storedNum = ''; 
+// 	function clearPrevious() {
+// 	    var display = document.getElementById('display');
+// 	    if (calcFinished) {
+// 	        display.value = '0';
+// 	        calcFinished = false;
 // 	    }
-// 	    console.log(operatorInput);
+// 	}
+	
+	
+// 	function insertDecimal() {
+// 	    var display = document.getElementById('leftSide');
+// 	    	clearPrevious();
+// 	    if (display.value.indexOf('.') === -1) {
+// 	    	display.value += '.';
+// 	}
+// 	}
+	
+// // math operations
 
+// 	function add() {
+// 		var display = document.getElementById('operator');
+// 		leftSide = leftSide + rightSide
+// 	}
+// 	function subtract() {
+// 		var display = document.getElementById('operator');
+// 		leftSide = leftSide - rightSide
+// 	}
+
+// 	function multiply() {
+// 		var display = document.getElementById('operator');
+// 		leftSide = leftSide * rightSide
+// 	}
+// 	function divide() {
+// 		var display = document.getElementById('operator');
+// 		leftSide = leftSide / rightSide
+// 	}
+
+
+
+// // right side output
+// 	function setOperation(command) {
+// 	    var display = document.getElementById('rightSide');
+// 	    	calculate();
+// 	    	storedNum = display.value;
+// 	    if (operations.hasOwnProperty(command)) {
+// 	        operation = operations[command];
+// 	    }
+// 	}
+	
+// 	function calculate() {
+// 	    var display = document.getElementById('rightSide');
+// 	    	display.value = operation(+ storedNum, + display.value);
+// 	    	calcFinished = true;
+// 	    	operation = operations.none;
+// 	}
+	
+// // events
+
+
+
+// // //events
+
+
+//   var operatorInput = document.getElementById("signs");
+//  	    for(var i = 0; i < operatorInput.length; i++) {
+//  	        operatorInput[i].addEventListener('click', storeSecondInput);
+//  	    }
+// }());
 // 	var printLeft= document.getElementsByClassName("digits");
 // 	    document.getElementsByClassName("digits").addEventListener('click', printLeft);
 // 	    printLeft();
-
-
-
-
-
 
