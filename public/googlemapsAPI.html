@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Maps API</title>
+        <style>
+            #map, #map2, #map3 {
+                height: 500px;
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?AIzaSyC83fh19iG-oEtnlI52q2dvdlI0V92kC7k"></script>
+        <script type="text/javascript">  
+        (function() {
+        "use strict";
+      // Restaraunt
+          var mapOptions = {
+              zoom: 20,
+              center: {
+                  lat: 40.719862, 
+                  lng: -73.997373
+                  
+              }
+          };
+              mapTypeId: google.maps.MapTypeId.SATELLITE;
+
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var address = "165 Mulberry St, New York, NY 10013";
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ "address": address }, function(results, status) {
+           if (status == google.maps.GeocoderStatus.OK) {
+               (results[0].geometry.location);
+           } else {
+               alert("Geocoding was not successful - STATUS: " + status);
+           }
+        });
+        var amici = { lat: 40.719862, lng: -73.997373 };
+
+        var marker = new google.maps.Marker({
+            position: amici,
+            map: map,
+            title: 'Amici II (Little Italy)'
+        });
+
+
+        var infowindow = new google.maps.InfoWindow({
+        content: "<b>Amici II</b>, is right inside Little Italy AKA <em>Heaven on Earth</em>."
+        });
+          infowindow.open(map, marker);
+
+      // Hotel
+        var mapHotel = {
+              zoom: 20,
+              center: {
+                  lat: 40.761985, 
+                  lng: -73.9829247
+              }
+          };
+              mapTypeId: google.maps.MapTypeId.SATELLITE;
+
+        var hotelMap = new google.maps.Map(document.getElementById("hotelMap"), mapHotel);
+
+        var hotelAddress = "790 7th Ave, New York, NY 10019";
+        var hotelGeocoder = new google.maps.Geocoder();
+        hotelGeocoder.geocode({ "address": address }, function(results, status) {
+           if (status == google.maps.GeocoderStatus.OK) {
+               (results[0].geometry.location);
+           } else {
+               alert("Geocoding was not successful - STATUS: " + status);
+           }
+        });
+        var hotel = { lat: 40.761985, lng: -73.9829247 };
+
+        var marker = new google.maps.Marker({
+            position: hotel,
+            map: map,
+            title: 'The Manhattan at Times Square Hotel'
+        });
+
+
+        var infowindow = new google.maps.InfoWindow({
+        content: "<b>The Manhattan at Times Square Hotel</b> Three girls, one room, one mattress. How are we still friends?"
+        });
+          infowindow.open(map, marker);
+
+        })();
+        </script>
+    </body>
+</html>
