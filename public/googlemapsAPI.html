@@ -13,80 +13,102 @@
         <div id="map"></div>
         <script src="https://maps.googleapis.com/maps/api/js?AIzaSyC83fh19iG-oEtnlI52q2dvdlI0V92kC7k"></script>
         <script type="text/javascript">  
-        (function() {
+        (function nycTrip() {
         "use strict";
-      // Restaraunt
-          var mapOptions = {
-              zoom: 20,
-              center: {
-                  lat: 40.719862, 
-                  lng: -73.997373
-                  
+          var locations = [
+            ['Amici', 40.719862, -73.997373, 5],
+            ['The Manhattan at Times Square', 40.761985, -73.9829247],
+            ['The Statue of Liberty', 40.6892, 74.0445, 3],
+            ['Empire State Building', 40.7484, -73.9857, 2],
+            ['Central Park', 40.7829, -73.9654, 4],
+            ['Madison Square Garden', 40.7505, -73.9934, 6],
+            ['Ellens Stardust Diner', 40.7618157, -73.9833893, 8],
+            ['Majestic Theater on Broadway', 40.7583862, -73.9881585, 9],
+            ['International Bar', 40.7270286, -73.9854043, 9],
+            ['Times Square', 40.7589, -73.9851, 10],
+            ['Ground Zero Memorial', 40.7105803, -74.015583, 11],
+            ['Ciao Italian Restaurant', 40.7105803, -74.015583, 12]
+              // 185 Bleeker Street, New York, NY 10012
+         ];
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 13,
+                  center: new google.maps.LatLng(40.761985, -73.9829247),
+                  mapTypeId: google.maps.MapTypeId.HYBRID
+                });
+            
+              var infowindow = new google.maps.InfoWindow();
+
+              var marker, i;
+          
+              for (i = 0; i < locations.length; i++) {  
+                marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                  map: map
+                });
+          
+                google.maps.event.addListener(marker, 'click', (function(marker, i          ) {
+                  return function() {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                  }
+                })(marker, i));
               }
-          };
-              mapTypeId: google.maps.MapTypeId.SATELLITE;
-
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-        var address = "165 Mulberry St, New York, NY 10013";
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ "address": address }, function(results, status) {
-           if (status == google.maps.GeocoderStatus.OK) {
-               (results[0].geometry.location);
-           } else {
-               alert("Geocoding was not successful - STATUS: " + status);
-           }
-        });
-        var amici = { lat: 40.719862, lng: -73.997373 };
-
-        var marker = new google.maps.Marker({
-            position: amici,
-            map: map,
-            title: 'Amici II (Little Italy)'
-        });
-
-
-        var infowindow = new google.maps.InfoWindow({
-        content: "<b>Amici II</b>, is right inside Little Italy AKA <em>Heaven on Earth</em>."
-        });
-          infowindow.open(map, marker);
-
-      // Hotel
-        var mapHotel = {
-              zoom: 20,
-              center: {
-                  lat: 40.761985, 
-                  lng: -73.9829247
-              }
-          };
-              mapTypeId: google.maps.MapTypeId.SATELLITE;
-
-        var hotelMap = new google.maps.Map(document.getElementById("hotelMap"), mapHotel);
-
-        var hotelAddress = "790 7th Ave, New York, NY 10019";
-        var hotelGeocoder = new google.maps.Geocoder();
-        hotelGeocoder.geocode({ "address": address }, function(results, status) {
-           if (status == google.maps.GeocoderStatus.OK) {
-               (results[0].geometry.location);
-           } else {
-               alert("Geocoding was not successful - STATUS: " + status);
-           }
-        });
-        var hotel = { lat: 40.761985, lng: -73.9829247 };
-
-        var marker = new google.maps.Marker({
-            position: hotel,
-            map: map,
-            title: 'The Manhattan at Times Square Hotel'
-        });
-
-
-        var infowindow = new google.maps.InfoWindow({
-        content: "<b>The Manhattan at Times Square Hotel</b> Three girls, one room, one mattress. How are we still friends?"
-        });
-          infowindow.open(map, marker);
-
         })();
+          // }
+
+          // function loadScript() {
+          // var script = document.createElement('script');
+             // script.type = 'text/javascript';
+             // script.src = 'https://maps.googleapis.com/maps/api/js?AIzaSyC83fh19iG-oEtnlI52q2dvdlI0V92kC7k' +
+                 // 'callback=initialize';
+             // document.body.appendChild(script);
+           // }
+           // 
+           // window.onload = loadScript;
+
+
+      //   var infowindow = new google.maps.InfoWindow({
+      //   content: "<b>Amici II</b>, is right inside Little Italy AKA <em>Heaven on Earth</em>."
+      //   });
+      //     infowindow.open(map, marker);
+
+      // // Hotel
+      //   var mapHotel = {
+      //         zoom: 20,
+      //         center: {
+      //             lat: 40.761985, 
+      //             lng: -73.9829247
+      //         }
+      //     };
+      //         mapTypeId: google.maps.MapTypeId.SATELLITE;
+
+      //   var hotelMap = new google.maps.Map(document.getElementById("hotelMap"), mapHotel);
+
+      //   var hotelAddress = "790 7th Ave, New York, NY 10019";
+      //   var hotelGeocoder = new google.maps.Geocoder();
+      //   hotelGeocoder.geocode({ "address": address }, function(results, status) {
+      //      if (status == google.maps.GeocoderStatus.OK) {
+      //          (results[0].geometry.location);
+      //      } else {
+      //          alert("Geocoding was not successful - STATUS: " + status);
+      //      }
+      //   });
+      //   var hotel = { lat: 40.761985, lng: -73.9829247 };
+
+      //   var marker = new google.maps.Marker({
+      //       position: hotel,
+      //       map: map,
+      //       title: 'The Manhattan at Times Square Hotel'
+      //   });
+
+
+      //   var infowindow = new google.maps.InfoWindow({
+      //   content: "<b>The Manhattan at Times Square Hotel</b> Three girls, one room, one mattress. How are we still friends?"
+      //   });
+      //     infowindow.open(map, marker);
+
+      //   })();
         </script>
     </body>
 </html>
