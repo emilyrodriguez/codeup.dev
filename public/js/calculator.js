@@ -56,7 +56,7 @@
 			result = (parseFloat(x) * .01);
 		} else if (y == "^") {
 			result = Math.pow(x,z);
-		} else if (y == "√") {
+		} else if (y == "sqrt") {
 			result = Math.sqrt(x);;	
 		} 
 
