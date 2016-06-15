@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JQuery Exercises</title>
+	</head>
+	<body>
+		<div id="helloWorld">
+			<h1 id="main-heading">Hello World!</h1>
+			<h2 id="second-heading">I Can Use jQuery Now!</h2>
+			<h3 class="codeup">jQuery Use in Coding</h3>
+
+				<p class="codeup">This is my first exercise using jQuery, which is much easier to use than JavaScript for a lot of things such 	as:</p>
+				<ul>
+					<li>Navigating a Document</li>
+					<li>Selecting DOM Elements</li>
+					<li>Creating Animations</li>
+					<li>Handling Events</li>
+					<li>Create Ajax Applications</li>
+					<li>Add Plugins</li>
+				</ul>
+		</div>
+		<script src="js/jquery-3.0.0.js"></script>
+		<script>
+			$(document).ready(function(){
+			 	var contentAlert = $('h1').html();
+			 	alert(contentAlert);
+			})
+			$(document).ready(function() {
+   			 	var contents = $('#second-heading').html();
+   			 	alert(contents);
+			});
+			$(document).ready(function() {
+				$(".codeup").css("border", "1px solid red");
+			});
+			$(document).ready(function(){
+				$("li").css('font-size', '20px');
+			});
+			$(document).ready(function(){
+				$("h1, li, p").css('background-color', '#FF0');
+			});
+		</script>
+	</body>
+</html>
