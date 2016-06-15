@@ -6,19 +6,15 @@
 	    	.invisible {
 	    		display: none;
 	    	}
-	    	dt {
-	    		font-weight: bold;
-	    	}
+
 	    	#toggle, {
 	    		text-decoration: underline;
 
 	    	}
-	    	a {
-	    		color: blue;
-	    	}
 	    </style>
 	</head>
 	<body>
+
 	    <h1 id="codeup">National Parks FAQ</h1>
 	    	<dl>
 	    		<dt>How many employees are in the National Park Service?</dt>
@@ -63,6 +59,32 @@
 	    		<a id="toggle">Click for answer</a> 
 	
 	    	</dl>
+	    		<h2>National Parks List</h2>
+	    		<h3>Badlands</h3>
+	    			<ul>
+	    				<li>Since 1994 the park has served as the site for the reintroduction of the black-footed ferret, one of the most endangered animals in the world, which depends upon the park’s protected status to thrive.</li>
+	    				<li>The hills and buttes in Badlands National Park consist largely of sedimentary rock.</li>
+	    				<li>In 1890, Badlands National Park witnessed one of the last "ghost dances" at Stronghold Table. The Lakota Indians believed that the dance rendered them impervious to bullets and that it would push the encroaching white men out of their territory.</li>
+	    				<li>During World War II, the US government took over a portion of the Pine Ridge Reservation for use as a gunnery range. That area now falls within the purveyance of the park, in the Stronghold District. From 1942 until 1945, the military tested new forms of artillery there. </li>
+	    				
+	    			</ul>
+	    		<h3>Denali</h3>
+	    			<ul>
+	    				<li>Denali means "The High One" in language of the Athabascan tribe.</li>
+	    				<li>Sable Pass is a park attraction where you may have the best chance of spotting some grizzly bears feasting on roots. </li>
+	    				<li>Denali's wood frog is different from the others of its species by virtue of it evolutionary adaptation that causes it to actually freeze solid during the winter. The frog's heart stops beating and its lung do not breathe again until the spring thaw.</li>
+	    				<li>Hiking trails abound in Denali, but the only trails maintained by the park are the short looping ones located near the hotel.</li>
+	    				
+	    			</ul>
+	    		<h3>Everglades</h3>
+	    			<ul>
+	    				<li>Largest continuous stand of sawgrass prairie in North America.</li>
+	    				<li>Predominant water recharge area for all of South Florida through the Biscayne aquifer.</li>
+	    				<li>Home of fourteen endangered and nine threatened species.</li>
+	    				<li>Largest mangrove ecosystem in the western hemisphere.</li>
+	    				
+	    			</ul>
+
 	    		
 	    <script src="js/jquery-3.0.0.js"></script>
 	    <script>
@@ -70,7 +92,14 @@
 				$('#toggle').click(function() {
 	                $('dd').toggleClass('invisible');
 	            });
-	    
+
+	            $('ul').each(function (index,element) {
+	            	$(element).children().first().css('font-weight', 'bold');
+	            });
+
+	    		$("li").click(function() {
+					$(this).parent().toggleClass("invisible");
+				});
 	    </script>
 	</body>
 </html>
