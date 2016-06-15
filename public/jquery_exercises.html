@@ -21,22 +21,23 @@
 		</div>
 		<script src="js/jquery-3.0.0.js"></script>
 		<script>
-			$(document).ready(function(){
-			 	var contentAlert = $('h1').html();
-			 	alert(contentAlert);
-			})
-			$(document).ready(function() {
-   			 	var contents = $('#second-heading').html();
-   			 	alert(contents);
+			$('h1').on('click', function () {
+				$(this).css('background-color', 'yellow');
 			});
-			$(document).ready(function() {
-				$(".codeup").css("border", "1px solid red");
+			$(document).ready(function () {
+				$('p').dblclick(function () {
+					$(this).css('font-size', '18px');
+				});
 			});
-			$(document).ready(function(){
-				$("li").css('font-size', '20px');
-			});
-			$(document).ready(function(){
-				$("h1, li, p").css('background-color', '#FF0');
+			$(document).ready(function () {
+				$('li').hover(
+					function() {
+						$(this).css('background-color', 'red');
+					},
+					function() {
+						$(this).css('background-color', 'white');
+					}
+					);
 			});
 		</script>
 	</body>
