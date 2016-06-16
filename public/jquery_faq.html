@@ -90,18 +90,14 @@
 	    <script>
 	        "use strict";
 
-            	$('#toggle').click(function() {
-   					    $('dd').fadeIn('invisible');
+            	$('h3').click(function() {
+   					    $('ul').slideUp('invisible');
    					});
 
-            	$('document').ready(function() {
-    				$('h3').click(function() {
-    				    $('ul').fadeToggle();
-    				});
-    				$('h3').click(function() {
-    				    $('ul').fadeToggle();
-    				});
-				});
+            	$('#toggle').click(function(event) {
+            		event.preventDefault();
+            		$('dd').slideToggle('invisible');
+            	});
 	    </script>
 	</body>
 </html>
