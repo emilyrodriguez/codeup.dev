@@ -91,15 +91,17 @@
 	        "use strict";
 
             	$('#toggle').click(function() {
-   					    $('dd').toggle('invisible');
+   					    $('dd').fadeIn('invisible');
    					});
-
 
             	$('document').ready(function() {
-   					$('li').click(function() {
-   				     	$('li').hide();
-   				 });
-   					});
+    				$('h3').click(function() {
+    				    $('ul').fadeToggle();
+    				});
+    				$('h3').click(function() {
+    				    $('ul').fadeToggle();
+    				});
+				});
 	    </script>
 	</body>
 </html>
