@@ -89,17 +89,17 @@
 	    <script src="js/jquery-3.0.0.js"></script>
 	    <script>
 	        "use strict";
-				$('#toggle').click(function() {
-	                $('dd').toggleClass('invisible');
-	            });
 
-	            $('ul').each(function (index,element) {
-	            	$(element).children().first().css('font-weight', 'bold');
-	            });
+            	$('#toggle').click(function() {
+   					    $('dd').toggle('invisible');
+   					});
 
-	    		$("li").click(function() {
-					$(this).parent().toggleClass("invisible");
-				});
+
+            	$('document').ready(function() {
+   					$('li').click(function() {
+   				     	$('li').hide();
+   				 });
+   					});
 	    </script>
 	</body>
 </html>
