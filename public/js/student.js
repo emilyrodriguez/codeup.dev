@@ -24,48 +24,42 @@
     }
     
     
-    var continueButton = document.getElementById("add-grade");
-    var calculateButton = document.getElementById("calculate-average");
-    var saveButton = document.getElementById("save-name");
+    var continueButton = $('#add-grade');
+    var calculateButton = $('#calculate-average');
+    var saveButton = $("#save-name");
     
     var username = function (event) {
-        var nameInput = document.getElementById("name");
-        student.name = nameInput.value;
-        document.getElementById("student-name").innerText = nameInput.value;
-        continueButton.removeAttribute("disabled");
-        calculateButton.removeAttribute("disabled");
+        var nameInput = $("#name");
+        student.name = nameInput.val();
+        $('#student-name').html(nameInput.val());
+        continueButton.removeAttr("disabled");
+        calculateButton.removeAttr("disabled");
     }
      
     function addContinue (event) {
-        var subject = document.getElementById("subject").value;
-        var grade = parseInt(document.getElementById("grade").value);
+        var subject = $("#subject").val();
+        var grade = parseInt($("#grade").val());
         student.addSubject(subject, grade);
-        
-    
-        var table = document.getElementById('grades');
-        table.innerHTML = '<tr><td>' + subject + '</td><td>' + grade + '</td></tr>' + table.    innerHTML;
+        var table = $('#grades');
+        table.html('<tr><td>' + subject + '</td><td>' + grade + '</td></tr>' + table.html());
     }
     
     function calculateAverage (event) {
         addContinue();
         var studentAverage = student.calculateAverage();
-        document.getElementById("student-average").innerText = studentAverage;
-        
-        if (student.isAwesome()) {
-            document.getElementById('student-awesome').removeAttribute('class');
-            document.getElementById('student-awesome').removeAttribute('class', 'hidden');
-        } else {
-            document.getElementById('student-practiceif').removeAttribute('class');
-            document.getElementById('student-practiceif').removeAttribute('class', 'hidden');
-        }
-         continueButton.setAttribute('disabled', true);
-        calculateButton.setAttribute('disabled', true);
-    }
-    
-    saveButton.addEventListener('click', username);
-    continueButton.addEventListener('click', addContinue);
-    calculateButton.addEventListener('click', calculateAverage);
+        $("#student-average").html(studentAverage);
 
+        if (student.isAwesome()) {
+            $('#student-awesome').removeAttr('class', 'hidden');
+        } else {
+            $('#student-practice').removeAttr('class', 'hidden');
+        }
+        continueButton.attr('disabled', true);
+        calculateButton.attr('disabled', true);
+    }
+    saveButton.on('click', username);
+    continueButton.on('click', addContinue);
+    calculateButton.on('click', calculateAverage);
 
 
 
