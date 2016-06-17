@@ -38,7 +38,7 @@
      
     function addContinue (event) {
         var subject = $("#subject").val();
-        var grade = parseInt($("#grade").val());
+        var grade = parseInt($("#grade").val()).toFixed(2);
         student.addSubject(subject, grade);
         var table = $('#grades');
         table.html('<tr><td>' + subject + '</td><td>' + grade + '</td></tr>' + table.html());
@@ -52,7 +52,7 @@
         if (student.isAwesome()) {
             $('#student-awesome').removeAttr('class', 'hidden');
         } else {
-            $('#student-practice').removeAttr('class', 'hidden');
+            $('#student-practiceif').removeAttr('class', 'hidden');
         }
         continueButton.attr('disabled', true);
         calculateButton.attr('disabled', true);

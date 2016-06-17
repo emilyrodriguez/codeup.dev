@@ -18,7 +18,7 @@
             <ul class="nav navbar-nav">
                     <li><a href="resume.html">Resume</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="ajax_blog.html">Blog</a></li>
                     <li><a href="contact.php">Contact</a></li>
             </ul>
 

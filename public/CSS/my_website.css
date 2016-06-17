@@ -352,7 +352,7 @@ h3.dark-grey {
 }
 
 /*Blog*/
-.blogShort{ border-bottom:1px solid #ddd;}
+#blog-posts{ border-bottom:1px solid #ddd;}
 .add{background: #333; padding: 10%; height: 300px;}
 
 .nav-sidebar { 
