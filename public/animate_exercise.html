@@ -40,7 +40,7 @@
         $(document).ready(function() {
             $("#btn-move").click(function() {
             $("#animate-box").animate({
-                left: "100px"
+                left: "+=100px"
             }, 2000);
             });
         });
@@ -81,15 +81,15 @@
             $(document).ready(function() {
                 $("#btn-all").click(function() {
                     $("#animate-box").animate({
-                       left: "100px",
+                        left: "+=100px",
                         height: "250px",
                         width: "250px"
-                    }, 1000).animate({
+                    }, 2000).animate({
                         opacity: "0"
-                    }, 500).animate({
-                        left: "-=100px",
+                    }, 1000).animate({
+                        left: "-=200px",
                         opacity: "1"
-                    }, 1000);
+                    }, 2000);
                 });
             });
 
