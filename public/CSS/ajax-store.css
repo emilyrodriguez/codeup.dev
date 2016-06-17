@@ -1,0 +1,12 @@
+#products, table, th, td {
+	border: 1.5px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 10px;
+	width: 800px;
+	align-items: center;
+}
+th {
+	background-color: #FF8522;
+	color: #FFF;
+}
