@@ -44,6 +44,7 @@ button.btn.btn-info.btn-m {
 	text-align: center;
 	margin-left: 5px;
 	box-shadow: 2px 2px 1px #888888;
+	background-color: white;
 }
 button.btn.btn-info.btn-m.signs, #clear-bttn, #posNeg-bttn, #percent-bttn, #exponent-bttn {
 	background-color: #000;
