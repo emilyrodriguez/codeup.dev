@@ -1,13 +1,14 @@
 h1, h2 {
-	margin-left: 20px;
+	margin-left: 50px;
 }
 #map {
 	border: 4px solid #DFB683;
-	width: 1005px;
+	width: 85%;
 	height: 200px;
 	padding-bottom: 20%;
 	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: 50px;
+	overflow: hidden;
 }
 
 input#address{
@@ -18,7 +19,7 @@ input#address{
 	text-align: center;
 	font-family: 'Roboto','sans-serif';
     line-height: 30px;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 div.day {
 	border-collapse: collapse;
@@ -31,7 +32,7 @@ div.day {
 	background-color: #FFEFD5;
 	margin-bottom: 20px;
 	margin-top: 50px;
-	margin-left: 20px;
+	margin-left: 52px;
 	overflow: scroll;
 	font-family: 'Roboto','sans-serif';
 }
