@@ -3,52 +3,39 @@ h1, h2 {
 }
 #map {
 	border: 4px solid #DFB683;
-	width: 900px;
-	height: 400px;
-	margin-bottom: 20px;
+	width: 990px;
+	height: 200px;
+	padding-bottom: 20%;
 	margin-top: 20px;
 	margin-left: 20px;
 }
+
 input#address{
-	width: 140px;
+	width: 265px;
 	height: 30px;
 	align-content: center;
-	font-size: 16px;
+	font-size: 20px;
 	text-align: center;
+	font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    margin-left: 20px;
 }
 div.day {
 	border-collapse: collapse;
 	border: 4px solid #DFB683;
 	width: 25%;
-	height: 255px;
+	height: 300px;
 	float: left;
 	position: relative;
 	text-align: center;
 	background-color: #FFEFD5;
-	margin-right: 54px;
 	margin-bottom: 20px;
+	margin-top: 50px;
 	margin-left: 20px;
+	overflow: scroll;
+	font-family: 'Roboto','sans-serif';
 }
 body {
    font-size: 20px;
    background-color: #ADD8E6;
-}
-#latlon {
-       position: absolute;
-       top: 162px;
-       left: 70%;
-       z-index: 5;
-       background-color: #fff;
-       padding: 5px;
-       border: 1px solid #999;
-       text-align: center;
-       font-family: 'Roboto','sans-serif';
-       line-height: 30px;
-       padding-left: 10px;
-       width: 150px;
-       height: 60px;
-}
-#container {
-	margin-left: 10%;
-	margin-right: 10%;
 }
