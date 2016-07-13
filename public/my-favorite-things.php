@@ -35,11 +35,11 @@
 		 		<tr>
 		 			<th>Actually I'm pretty boring, but for the sake of this exercise...</th>
 		 		</tr>
-		 	<?php foreach ($favorites as $favorite) { ?>
+		 	<?php foreach ($favorites as $favorite): ?>
 		 		<tr>
-		 			<td><?php echo $favorite; ?></td>
+		 			<td><?= $favorite; ?></td>
 		 		</tr>
-		 	<?php } ?>
+		 	<?php endforeach; ?>
 		 	</ul>
 	 	</table>
  	</div>

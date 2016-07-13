@@ -11,7 +11,7 @@
 <body>
 	<div id="generator">
 		<h1>Do you like... </h1>
-			<?php echo $randomizer . "?\n"?>
+			<?= $randomizer . "?\n"?>
 	</div>
 </body>
 </html>
