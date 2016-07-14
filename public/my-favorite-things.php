@@ -1,5 +1,10 @@
 <?php 
- 	$favorites = ['video games', 'trivia', 'food', 'sleeping', 'pokemon catching'];
+ 	function pageController() {
+ 		$data['favorites'] = ['video games', 'trivia', 'food', 'sleeping', 'pokemon catching'];
+ 		// $randomize = $data['faves'][mt_rand(0, count($data['faves']) - 1)];
+ 		return $data;
+ 	}
+ 	extract(pageController()); 
  ?>
  <!DOCTYPE html>
  <html>
