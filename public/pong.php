@@ -19,14 +19,14 @@ extract(pageController());
 <body id="pong">
 	 	<div class="scoreboard">
 	 	<h1>Pong</h1>
-		<h2>Score: <?=$counter;?>!</h2>
+		<h2>Score: <?=$counter;?></h2>
 		</div>
 
 		    <p>
-		    	<a href="/ping.php?counter=<?= $counter +1; ?>"><button type="button" class="button">Hit!</button></a>
+		    	<a href="/ping.php?counter=<?= $counter +1; ?>"><button type="button" class="button">HIT</button></a>
 		    </p>
 		    <p>
-		    	<a href="/pong.php?counter=<?= $counter-$counter; ?>"><button type="button" class="button">Miss!</button></a>
+		    	<a href="/pong.php?counter=<?= $counter=0; ?>"><button type="button" class="button">MISS</button></a>
 		    </p>
  	</div>
 

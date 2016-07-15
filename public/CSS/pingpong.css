@@ -1,14 +1,17 @@
 .button {
 	width: 100px;
 	height: 100px;
-	background: red;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-	background-color: #F0F0F0;
+	background: #F0F0F0;
+	background: radial-gradient(#E8E9EB, #E0E1E1, #A5A4A2);
+	background: -webkit-radial-gradient(#E8E9EB, #E0E1E1, #A5A4A2);
+	background: -o-radial-gradient(#E8E9EB, #E0E1E1, #A5A4A2);
+	background: -moz-radial-gradient(#E8E9EB, #E0E1E1, #A5A4A2);
 }
 .button:hover {
-	background:#30588e;
+	background:#E0E1E1;
 }
 
 body{
