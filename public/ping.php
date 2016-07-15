@@ -1,7 +1,6 @@
 <?php  
 function pageController() {
 	$data = [];
-
 	if (isset($_GET['counter'])){
 		$data['counter'] = $_GET['counter'];
 	}else {
@@ -15,18 +14,20 @@ extract(pageController());
 <html>
 <head>
 	<title>Ping</title>
+	<link rel="stylesheet" href="css/pingpong.css">
 </head>
 <body>
-	 	<div id="container">
+ 	<div id="container-ping">
+	 	<div class="scoreboard">
 	 	<h1>Ping</h1>
 		<h2>Score: <?=$counter;?>!</h2>
-		    <p>
-		    	<a href="/pong.php?counter=<?= $counter +1; ?>"><button type="button" class="button">Hit!</button></a>
-		    </p>
-		    <p>
-		    	<a href="/pong.php?counter=<?= $counter-$counter; ?>"><button type="button" class="button">Miss!</button></a>
-		    </p>
- 	</div>
-
+		</div>
+	    <p>
+	    	<a href="/pong.php?counter=<?= $counter +1; ?>"><button type="button" class="button">Hit!</button></a>
+	    </p>
+	    <p>
+	    	<a href="/ping.php?counter=<?= $counter-$counter; ?>"><button type="button" class="button">Miss!</button></a>
+	    </p>
+	</div>
 </body>
 </html>
