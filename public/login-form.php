@@ -1,8 +1,8 @@
 <?php
 	function pageController(){
 		$data = [];
-		$data['username'] = isset($_POST['username']) ? $_POST['username'] : '';
-		$data['password'] = isset($_POST['password']) ? $_POST['password'] : '';
+		$data['username'] = isset($_POST['username']) ? htmlspecialchars(strip_tags($_POST['username'])) : '';
+		$data['password'] = isset($_POST['password']) ? htmlspecialchars(strip_tags($_POST['password'])) : '';
 		if ($data['username'] === 'guest' && $data['password'] === 'password') {
 			header('Location: authorize.php');
 			exit();
