@@ -17,17 +17,14 @@ extract(pageController());
 	<link rel="stylesheet" href="css/pingpong.css">
 </head>
 <body>
- 	<div id="container-ping">
  	<div class="scoreboard">
  	<h1>Ping</h1>
 	<h2>Score: <?=$counter;?></h2>
 	</div>
-	    <p>
-	    	<a href="/pong.php?counter=<?= $counter+1; ?>"><button type="button" class="button">HIT</button></a>
-	    </p>
-	    <p>
-	    	<a href="/ping.php?counter=<?= $counter=0; ?>"><button type="button" class="button">MISS</button></a>
-	    </p>
-	</div>
+
+	<a href="/pong.php?counter=<?= $counter+1; ?>"><button type="button" class="button">HIT</button></a>
+
+	<a href="/ping.php?counter=<?= $counter=0; ?>"><button type="button" class="button">MISS</button></a>
+
 </body>
 </html>

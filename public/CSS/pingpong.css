@@ -9,6 +9,7 @@
 	background: -webkit-radial-gradient(#E8E9EB, #E0E1E1, #A5A4A2);
 	background: -o-radial-gradient(#E8E9EB, #E0E1E1, #A5A4A2);
 	background: -moz-radial-gradient(#E8E9EB, #E0E1E1, #A5A4A2);
+	margin: 10px;
 }
 .button:hover {
 	background:#E0E1E1;
