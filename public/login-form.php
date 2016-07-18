@@ -1,9 +1,15 @@
 <?php
 	function pageController(){
+		session_start();
 		$data = [];
 		$data['username'] = isset($_POST['username']) ? htmlspecialchars(strip_tags($_POST['username'])) : '';
 		$data['password'] = isset($_POST['password']) ? htmlspecialchars(strip_tags($_POST['password'])) : '';
-		if ($data['username'] === 'guest' && $data['password'] === 'password') {
+
+		if(isset($_SESSION['logged_in_user'])) {
+			header('Location: authorize.php');
+			exit();
+		}elseif ($data['username'] === 'guest' && $data['password'] === 'password') {
+			$_SESSION['logged_in_user'] = $data['username'];
 			header('Location: authorize.php');
 			exit();
 		} elseif ($data['username'] !== '' && $data['password'] !== '') {
@@ -19,24 +25,26 @@
     <title>POST Example</title>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     	<style>
+    		h1 {
+    			margin-bottom: 15px;
+    		}
     		body {
 			    padding-top: 120px;
 			    padding-bottom: 40px;
-			    background-color: #eee;
 			    background-image: url("/img/dark_embroidery.png");
 			}
 			form#login {
 				background-color: white;
 				padding-top: 10px;
+							
 			}
 			input {
-				width: 300px;
-				height: 30px;
+				width: 85%;
+				height: 10%;
 			}
 			button#bttn-login {
-				margin-top: 15px;
-				margin-bottom: 20px;
-				width: 300px
+				margin-top: 5px;
+				width: 85%;
 				
 			}
 			.container {
