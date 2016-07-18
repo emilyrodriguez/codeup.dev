@@ -7,8 +7,18 @@
 		$data['guess'] = isset($_POST['guess']) ? htmlspecialchars(strip_tags($_POST['guess'])) : '';
 		$data['selectedNumber'] = isset($_SESSION['number']) ? $_SESSION['number'] : mt_rand(1, 100);
 		$_SESSION['number'] = $data['selectedNumber'];
+		$reset = isset($_GET['reset']) ? $_GET['reset'] : 0;
+		if ($reset == 1) {
+			session_destroy();
+			session_unset($_SESSION['number']);
+			session_regenerate_id(true);
+			header('Location: high-low.php');
+			$_POST['guess'] = '';
+		}
 
-			if ($data['guess'] < $data['selectedNumber']) {
+			if ($data['guess'] == "") {
+				$data['message'] = "Enter a number between 1 and 100";
+			} elseif ($data['guess'] < $data['selectedNumber']) {
 				$data['message'] = "Higher!";
 			} elseif ($data['guess'] > $data['selectedNumber']) {
 				$data['message'] = "Lower!";
@@ -60,11 +70,14 @@
                         name="guess"
                         id="guess">
                 </div>
-              <!-- 	<button type="submit" class="btn btn-primary">Generate Number</button> -->
                 <button type="submit" class="btn btn-primary">
                     Guess!!
                 </button>
             </form>
+            <div>
+            	<a href="high-low.php?reset=1" class="btn btn-primary">Start Over</a>
+        
+            </div>
         </div>
         <script
             src="https://code.jquery.com/jquery-2.2.4.min.js"
