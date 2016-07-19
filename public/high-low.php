@@ -1,7 +1,6 @@
 <?php
 	function pageController() {
 		session_start();
-		var_dump($_POST, $_SESSION);
 		$data = [];
 		$data['message'] = "Your guess:";
 		$data['guess'] = isset($_POST['guess']) ? htmlspecialchars(strip_tags($_POST['guess'])) : '';
@@ -49,6 +48,11 @@
               <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
               </script>
         <![endif]-->
+        <style>
+        	button.btn.btn-primary {
+        		margin-bottom: 10px;
+        	}
+        </style>
     </head>
     <body>
         <div class="container">
