@@ -1,12 +1,9 @@
-<?php  
+<?php
+require_once '../src/Input.php';
+
 function pageController() {
-	$data = [];
-	if (isset($_GET['counter'])){
-		$data['counter'] = $_GET['counter'];
-	}else {
-		$data['counter'] = 0;
-	}
-	return $data;
+	$counter = Input::has("counter") ? Input::get("counter") : 0;
+	return [ "counter" => $counter ];
 }
 extract(pageController());
 ?>
@@ -22,9 +19,9 @@ extract(pageController());
 	<h2>Score: <?=$counter;?></h2>
 	</div>
 
-	<a href="/pong.php?counter=<?= $counter+1; ?>"><button type="button" class="button">HIT</button></a>
+	<a href="/pong.php?result=hit&amp;counter=<?=$counter + 1 ?>"><button type="button" class="button">HIT</button></a>
 
-	<a href="/ping.php?counter=<?= $counter=0; ?>"><button type="button" class="button">MISS</button></a>
+	<a href="/ping.php?result=miss&amp;counter=<?=$counter = 0 ?>"><button type="button" class="button">MISS</button></a>
 
 </body>
 </html>
