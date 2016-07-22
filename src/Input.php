@@ -9,12 +9,8 @@ class Input
 	 * @return boolean whether value exists in $_POST or $_GET
 	 */
 	public static function has($key) {
-		if (isset($_REQUEST["$key"])) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+        return isset($_REQUEST["$key"]);
+    }
 	
 	/**
 	 * Get a requested value from either $_POST or $_GET
@@ -24,12 +20,9 @@ class Input
 	 * @return mixed value passed in request
 	 */
 
-	public static function get($key, $default = null)
-	{
-		if (self::has($key, $default = null)) {
-			return $_REQUEST["$key"];
-		}
-		return $default;
+	public static function get($key, $default = null) {
+	
+		return self::has($key) ? $_REQUEST[$key] : $default;
 	}
 
 	///////////////////////////////////////////////////////////////////////////
