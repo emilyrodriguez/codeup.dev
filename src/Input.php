@@ -1,17 +1,14 @@
 <?php
-
-class Input
-{
-	/**
+class Input {
+		/**
 	 * Check if a given value was passed in the request
 	 *
 	 * @param string $key index to look for in request
 	 * @return boolean whether value exists in $_POST or $_GET
 	 */
 	public static function has($key) {
-        return isset($_REQUEST["$key"]);
-    }
-	
+		return isset($_REQUEST[$key]);
+	}
 	/**
 	 * Get a requested value from either $_POST or $_GET
 	 *
@@ -19,17 +16,36 @@ class Input
 	 * @param mixed $default default value to return if key not found
 	 * @return mixed value passed in request
 	 */
-
 	public static function get($key, $default = null) {
-	
-		return self::has($key) ? $_REQUEST[$key] : $default;
+		return static::has($key) ? $_REQUEST[$key] : $default;
 	}
-
-	///////////////////////////////////////////////////////////////////////////
-	//                      DO NOT EDIT ANYTHING BELOW!!                     //
-	// The Input class should not ever be instantiated, so we prevent the    //
-	// constructor method from being called. We will be covering private     //
-	// later in the curriculum.                                              //
-	///////////////////////////////////////////////////////////////////////////
+	public static function isPost(){
+	 	return $_SERVER['REQUEST_METHOD'] === 'POST';
+	}
+	public static function getString($key) {
+		$value = static::get(trim($key));
+		if (static::isPost() && (empty($value) || !is_string(trim($value)))) {
+			throw new Exception ("$key does not exist or you did not enter a valid $key.");
+		}
+		return (string)$value;
+	}
+	public static function getNumber($key) {
+		$value = static::get(trim($key));
+		if (static::isPost() && (empty($value) || !is_numeric(trim($value)))) {
+			throw new Exception ("$key does not exist or you did not enter a valid $key.");
+		}
+		return floatval($value);
+	}
+	public static function getDate($key) {
+		$value = static::get(trim($key));
+		$year = substr($value, 0, 4);
+		$month = substr($value, 5, 1);
+		$day = substr($value, 8, 1);
+		if (is_int($key) || checkdate($month, $day, $year)) {
+			$date = new DateTime($value);
+			$date->format('Y-m-d');
+		}
+		return DateTime::$date;
+	}
 	private function __construct() {}
 }
