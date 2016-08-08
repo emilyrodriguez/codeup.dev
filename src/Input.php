@@ -6,9 +6,6 @@ class Input {
 	 * @param string $key index to look for in request
 	 * @return boolean whether value exists in $_POST or $_GET
 	 */
-	public static function has($key) {
-		return isset($_REQUEST[$key]);
-	}
 	/**
 	 * Get a requested value from either $_POST or $_GET
 	 *
@@ -16,6 +13,9 @@ class Input {
 	 * @param mixed $default default value to return if key not found
 	 * @return mixed value passed in request
 	 */
+	public static function has($key) {
+		return isset($_REQUEST[$key]);
+	}
 	public static function get($key, $default = null) {
 		return static::has($key) ? $_REQUEST[$key] : $default;
 	}
@@ -23,29 +23,30 @@ class Input {
 	 	return $_SERVER['REQUEST_METHOD'] === 'POST';
 	}
 	public static function getString($key) {
-		$value = static::get(trim($key));
-		if (static::isPost() && (empty($value) || !is_string(trim($value)))) {
-			throw new Exception ("$key does not exist or you did not enter a valid $key.");
+		$value = static::get($key);
+		if(!is_string($value)) {
+			throw new Exception("$key should be a string");
 		}
-		return (string)$value;
+		return trim($value);
 	}
-	public static function getNumber($key) {
-		$value = static::get(trim($key));
-		if (static::isPost() && (empty($value) || !is_numeric(trim($value)))) {
-			throw new Exception ("$key does not exist or you did not enter a valid $key.");
+	public static function getNumber($key, $default = 0) {
+		$value = static::get($key, $default);
+		if(!is_numeric($value)) {
+			throw new Exception("$key should be a number");
 		}
 		return floatval($value);
 	}
 	public static function getDate($key) {
-		$value = static::get(trim($key));
-		$year = substr($value, 0, 4);
-		$month = substr($value, 5, 1);
-		$day = substr($value, 8, 1);
-		if (is_int($key) || checkdate($month, $day, $year)) {
-			$date = new DateTime($value);
-			$date->format('Y-m-d');
+		$value = static::get($key);
+		if(!strtotime($value)) {
+			throw new Exception("$key should be a date");
 		}
-		return DateTime::$date;
+		$date = new DateTime($value);
+		return $date->format('Y-m-d');
 	}
-	private function __construct() {}
-}
+	public static function isPost() {
+		return !empty($_POST);
+	}
+	
+// 	private function __construct() {}
+// }
