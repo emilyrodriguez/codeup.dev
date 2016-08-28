@@ -1,18 +1,17 @@
 <?php  
+require_once '../src/auth.php';
+require_once '../src/Input.php';
+
 	function pageController() {
 		session_start();
-		$reset = isset($_GET['reset']) ? $_GET['reset'] : 0;
 		if(!isset($_SESSION['logged_in_user'])) {
-			header('Location: login-form.php');
-			exit();
-		} elseif ($reset == 1) {
-			session_destroy(); {
-				session_unset($_SESSION['logged_in_user']);
-				session_regenerate_id(true);
-			}
-			header('Location: login-form.php');
+			if (!Auth::check()) {
+		  		$_SESSION["message"] = "Please log in.";
+				redirect("authorize.php");
+				Auth::redirect("login-form.php");
+  			}
 		}
-		return['reset' => $reset];
+		return $_SESSION;
 	}
 	extract(pageController());
 ?>

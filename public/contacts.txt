@@ -11,6 +11,3 @@ Diana Prince|5554442930
 Dick Grayson|5552340987
 Rick Grimes|5555768103
 Daryl Dixon|9991203458
-phillip garcia|1234567
-luis|1234567
-emily|1234567

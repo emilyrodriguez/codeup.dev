@@ -60,11 +60,6 @@
                 <h1>High-Low Game</h1>
                 <h2><?=$message;?></h2>
             </header>
-            <!-- Switch the class from info to success when the user win -->
-            <div class="alert alert-info hidden" role="alert">
-
-             <!-- Remove hidden class after first attempt -->
-            </div>
             <form method="post">
                 <div class="form-group">
                     <label for="guess">Guess</label>
@@ -80,7 +75,6 @@
             </form>
             <div>
             	<a href="high-low.php?reset=1" class="btn btn-primary">Start Over</a>
-        
             </div>
         </div>
         <script

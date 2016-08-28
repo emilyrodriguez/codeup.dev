@@ -1,18 +1,11 @@
 <?php
+class InvalidArgumentException extends Exception { }
+class OutOfRangeException extends Exception  { }
+class DomainException extends Exception { }
+class LengthException extends Exception { }
+class RangeException extends LengthException { }
+
 class Input {
-		/**
-	 * Check if a given value was passed in the request
-	 *
-	 * @param string $key index to look for in request
-	 * @return boolean whether value exists in $_POST or $_GET
-	 */
-	/**
-	 * Get a requested value from either $_POST or $_GET
-	 *
-	 * @param string $key index to look for in index
-	 * @param mixed $default default value to return if key not found
-	 * @return mixed value passed in request
-	 */
 	public static function has($key) {
 		return isset($_REQUEST[$key]);
 	}
@@ -25,11 +18,11 @@ class Input {
 	public static function getString($key) {
 		$value = static::get($key);
 		if(!is_string($value)) {
-			throw new Exception("$key should be a string");
+			throw new InvalidArgumentException ("$key should be a string");
 		}
 		return trim($value);
 	}
-	public static function getNumber($key, $default = 0) {
+	public static function getNumber($key, $default = 0, $min=1, $max=150) {
 		$value = static::get($key, $default);
 		if(!is_numeric($value)) {
 			throw new Exception("$key should be a number");
@@ -47,6 +40,24 @@ class Input {
 	public static function isPost() {
 		return !empty($_POST);
 	}
+
+	try {
+		$test = new Input("Emily");
+	} catch(DomainException $e) {
+		echo "$value is the wrong type!";
+	} catch(InvalidArgumentException $e) {
+		echo "$min and $max are not numbers!";
+	} catch(LengthException $e) {
+		echo "String is shorter than $min or longer than $max!";
+	} catch(OutOfRangeException $e) {
+		echo "$key is missing from input!";
+	} catch(RangeException $e) {
+		echo "Number is less than $min or larger than $max!";
+	} catch (Exception $e) {
+		echo "An error occured: " . $e->getMessage() . PHP_EOL;
+	}
+
+}
 	
 // 	private function __construct() {}
 // }

@@ -18,23 +18,4 @@ function escape($input) {
 	$input = "";
 	return $input;
 }
-
-function authenticated($username, $password) {
-	if ($username == "guest" && $password == "password") {
-		$authenticated = true;
-	} elseif ($username == null && $password == null) {
-		$authenticated = null;
-	} else {
-		$authenticated = false;
-	}
-	return $authenticated;
-}
-function redirect($location) {
-	header("Location: $location");
-	exit;
-}
-function clearSession() {
-	session_unset();
-	session_regenerate_id(true);
-}
 ?>

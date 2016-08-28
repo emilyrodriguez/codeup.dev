@@ -12,6 +12,11 @@ class Model {
 		}
 		return null;
 	}
+	protected static $table;
+
+	public static function getTableName() {
+		return static::$table;
+	}
 }
 
 	$model = new Model();

@@ -72,13 +72,11 @@ extract(pageController());
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Your contacts should be here -->
                             <?php foreach ($contacts as $contact):  ?>
                             <tr>
                                 <td><?= $contact['name'] ?></td>
                                 <td><?= formatNumber($contact['number']) ?></td>
                                 <td>
-                                    <!-- The query string for this one should contain the contact name -->
                                     <a class="btn btn-danger" href="?name=<?= $contact['name'] ?>">
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true">
                                         </span>
